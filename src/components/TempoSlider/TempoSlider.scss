@@ -1,0 +1,70 @@
+$green: #74a386;
+$yellow: #fef89f;
+
+.wrap {
+  padding: 18px;
+}
+
+.label {
+  margin-bottom: 40px;
+  display: block;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  margin: 0;
+  display: block;
+  position: relative;
+  height: 3px;
+  background: $green;
+
+  &::before, &::after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: $yellow;
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    box-shadow: 0px 2px 0px $green;
+  }
+
+  &::before {
+    left: 0;
+    transform: translate(-50%, -48%);
+  }
+
+  &::after {
+    right: 0;
+    transform: translate(50%, -48%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+  }
+
+  &::-webkit-slider-thumb{
+    height: 70px;
+    width: 70px;
+    background-repeat: no-repeat;
+    background-image: url(https://uploads-ssl.webflow.com/5d114684c693cf4db4a9af8b/5d1dfb60bbf60237755902f2_Asset%2039.svg);
+    cursor: pointer;
+    -webkit-appearance: none;
+    z-index: 2;
+    position: relative;
+  }
+}

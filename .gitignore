@@ -1,0 +1,4 @@
+node_modules/
+dist/
+metronomate.code-workspace
+.env

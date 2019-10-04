@@ -1,0 +1,14 @@
+.wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  height: 10vh;
+  min-height: 60px;
+
+  button {
+    flex: 1;
+  }
+}
