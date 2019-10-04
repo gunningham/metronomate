@@ -32,17 +32,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.wav$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
-          }
-        ]
-      },
-      {
         test: /\.svg$/,
         use: [
           {
