@@ -2,8 +2,10 @@ import React from 'react'
 import styles from './Button.scss'
 
 const Button = ({ text, onClick, isActive }) => {
+  const classNames = `${styles.button} ${isActive ? styles.active : ''}`
+
   return (
-    <button className={`${styles.button} ${isActive ? styles.active : ''}`} onMouseDown={onClick}>
+    <button className={classNames} onMouseDown={onClick}>
       {text}
     </button>
   )

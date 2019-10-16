@@ -13,14 +13,18 @@ $text: #fff89f;
   padding: 10px 20px;
   color: $text;
   border: none;
-
+  
+  &.active {
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.33);
+    margin-top: 6px;
+  }
+  
   &:hover, &.active {
     background-color: $bgSecondary;
     cursor: pointer;
   }
 
-  &.active {
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.33);
-    margin-top: 6px;
+  &:focus {
+    outline: none;
   }
 }
