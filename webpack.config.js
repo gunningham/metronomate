@@ -1,7 +1,13 @@
+const webpack = require('webpack')
+const dotenv = require('dotenv').config({})
+
 module.exports = {
   entry: './src/app',
   output: {
     filename: 'bundle.js'
+  },
+  node: {
+    fs: 'empty'
   },
   module: {
     rules: [
@@ -30,18 +36,15 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
-          }
-        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        CONTENTFUL_SPACE: JSON.stringify(dotenv.parsed.CONTENTFUL_SPACE),
+        CONTENTFUL_ACCESS_TOKEN: JSON.stringify(dotenv.parsed.CONTENTFUL_ACCESS_TOKEN)
+      }
+    })
+  ]
 }
