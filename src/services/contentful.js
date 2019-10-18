@@ -1,9 +1,9 @@
 import { createClient } from 'contentful'
-import { CONTENTFUL_SPACE, CONTENTFUL_TOKEN } from '../constants'
+import { CONTENTFUL_SPACE, CONTENTFUL_ACCESS_TOKEN } from '../constants'
 
 const client = createClient({
   space: CONTENTFUL_SPACE,
-  accessToken: CONTENTFUL_TOKEN
+  accessToken: CONTENTFUL_ACCESS_TOKEN
 })
 
 export const fetchEntries = async contentType => {
