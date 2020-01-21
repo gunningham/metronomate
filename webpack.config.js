@@ -1,50 +1,6 @@
-const webpack = require('webpack')
-const dotenv = require('dotenv').config({})
+require('dotenv').config()
+const { NODE_ENV = 'production' } = process.env
 
-module.exports = {
-  entry: './src/app',
-  output: {
-    filename: 'bundle.js'
-  },
-  node: {
-    fs: 'empty'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: {
-                mode: 'local',
-                localIdentName: '[local]--[hash:base64:5]'
-              }
-            }
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        CONTENTFUL_SPACE: JSON.stringify(dotenv.parsed.CONTENTFUL_SPACE),
-        CONTENTFUL_ACCESS_TOKEN: JSON.stringify(dotenv.parsed.CONTENTFUL_ACCESS_TOKEN)
-      }
-    })
-  ]
-}
+module.exports = NODE_ENV === 'development'
+  ? require('./webpack/webpack.development.config')
+  : require('./webpack/webpack.production.config')
