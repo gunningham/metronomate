@@ -8,8 +8,8 @@ module.exports = {
     ...base.plugins,
     new webpack.DefinePlugin({
       'process.env': {
-        CONTENTFUL_SPACE: JSON.stringify(dotenv.parsed.CONTENTFUL_SPACE),
-        CONTENTFUL_ACCESS_TOKEN: JSON.stringify(dotenv.parsed.CONTENTFUL_ACCESS_TOKEN)
+        REACT_APP_CONTENTFUL_SPACE: JSON.stringify(dotenv.parsed.REACT_APP_CONTENTFUL_SPACE),
+        REACT_APP_CONTENTFUL_ACCESS_TOKEN: JSON.stringify(dotenv.parsed.REACT_APP_CONTENTFUL_ACCESS_TOKEN)
       }
     })
   ]
