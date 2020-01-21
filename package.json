@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build:production": "webpack --mode production"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,8 @@
     "query-string": "^6.8.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-howler": "^3.7.4"
+    "react-howler": "^3.7.4",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -30,7 +31,6 @@
     "sass-loader": "^7.1.0",
     "standard": "^13.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   }
