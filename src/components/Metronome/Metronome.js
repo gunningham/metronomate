@@ -11,12 +11,11 @@ const Metronome = () => {
   const [activeBeat, setActiveBeat] = useState({})
   const [genre, setGenre] = useState('rock')
   const [beats, setBeats] = useState([])
-  const howler = useRef(null)
+  const howlerRef = useRef(null)
 
   const onTempoChange = tempo => {
     if (!activeBeat.id) return
-    console.log(howler)
-    howler.current.howler.rate(tempo / DEFAULT_TEMPO)
+    howlerRef.current.howler.rate(tempo / DEFAULT_TEMPO)
   }
 
   const getBeats = async () => {
@@ -54,7 +53,7 @@ const Metronome = () => {
           />
         ))}
       </div>
-      <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howler} loop />
+      <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
       <TempoSlider onChange={onTempoChange} />
     </div>
   )

@@ -5,7 +5,7 @@ const Button = ({ text, onClick, isActive }) => {
   const classNames = `${styles.button} ${isActive ? styles.active : ''}`
 
   return (
-    <button className={classNames} onMouseDown={onClick}>
+    <button className={classNames} onClick={onClick}>
       {text}
     </button>
   )

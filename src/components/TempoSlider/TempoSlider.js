@@ -11,8 +11,9 @@ const TempoSlider = ({ onChange, defaultTempo }) => {
     onChange(value)
   }
 
-  const handleKeyDown = ({ keyCode }) => {
-    if (keyCode !== SPACE_KEY_CODE) return
+  const handleKeyDown = (event) => {
+    if (event.keyCode !== SPACE_KEY_CODE) return
+    event.preventDefault()
 
     setTempo(prevTempo => {
       if (prevTempo === MAX_TEMPO) setTempo(MIN_TEMPO)
@@ -20,7 +21,7 @@ const TempoSlider = ({ onChange, defaultTempo }) => {
     })
   }
 
-  // let parent know the tempo when it changes
+  // Inform parent of the tempo value onChange
   useEffect(() => onChange(tempo), [tempo])
 
   useEffect(() => {
