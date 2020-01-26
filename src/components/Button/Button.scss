@@ -1,9 +1,5 @@
-$bgMain: #80d3f0;
-$bgSecondary: #f395bf;
-$text: #fff89f;
-
 .button {
-  background-color: $bgMain;
+  background-color: $primary-colour;
   box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.33);
   border-radius: 100px;
   font-size: 36px;
@@ -11,7 +7,6 @@ $text: #fff89f;
   transition: margin 300ms ease, box-shadow 600ms ease, background-color 800ms ease;
   font-family: 'Averia Sans Libre', sans-serif;
   padding: 10px 20px;
-  color: $text;
   border: none;
   min-height: 70px;
   
@@ -21,7 +16,7 @@ $text: #fff89f;
   }
   
   &:hover, &.active {
-    background-color: $bgSecondary;
+    background-color: $secondary-colour;
     cursor: pointer;
   }
 

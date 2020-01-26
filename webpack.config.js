@@ -32,7 +32,11 @@ module.exports = {
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              data: '@import "src/resources/sass/main.scss";',
+              includePaths: [__dirname, 'src']
+            }
           }
         ]
       }
