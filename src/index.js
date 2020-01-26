@@ -1,5 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Metronome from './components/Metronome'
+import App from './components/App'
 
-render(<Metronome />, document.getElementById('metronomate'))
+render(<App />, document.getElementById('metronomate'))
