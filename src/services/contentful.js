@@ -6,8 +6,6 @@ const client = createClient({
   accessToken: REACT_APP_CONTENTFUL_ACCESS_TOKEN
 })
 
-console.log(process.env)
-
 export const fetchEntries = async contentType => {
   const entries = await client.getEntries({ content_type: contentType })
   const { error } = entries
