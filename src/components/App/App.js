@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-scroll'
+import Logo from '../../resources/svgs/logo.svg'
+import TitleLogo from '../../resources/svgs/hero-logo.svg'
 import queryString from 'query-string'
 import ReactHowler from 'react-howler'
 import Button from '../Button'
@@ -45,7 +47,11 @@ const App = () => {
 
   return (
     <div className={styles.wrap}>
-      <FullPageWrap name='section-1'>Section 1<Link smooth duration={300} to='section-2'>CLICK ERE</Link></FullPageWrap>
+      <Logo />
+      <FullPageWrap name='section-1'>
+        <TitleLogo />
+        <Link smooth duration={300} to='section-2'>Click to pick a genre</Link>
+      </FullPageWrap>
       <FullPageWrap name='section-2'>
         <div className={styles.buttons}>
           {beats.map(beat => (
