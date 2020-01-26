@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-scroll'
 import queryString from 'query-string'
 import ReactHowler from 'react-howler'
 import Button from '../Button'
@@ -6,9 +7,9 @@ import TempoSlider from '../TempoSlider'
 import FullPageWrap from '../FullPageWrap'
 import { DEFAULT_TEMPO } from '../../constants'
 import { fetchEntries } from '../../services/contentful'
-import styles from './Metronome.scss'
+import styles from './App.scss'
 
-const Metronome = () => {
+const App = () => {
   const [activeBeat, setActiveBeat] = useState({})
   const [genre, setGenre] = useState('rock')
   const [beats, setBeats] = useState([])
@@ -44,8 +45,8 @@ const Metronome = () => {
 
   return (
     <div className={styles.wrap}>
-      <FullPageWrap>Section 1</FullPageWrap>
-      <FullPageWrap>
+      <FullPageWrap name='section-1'>Section 1<Link smooth duration={300} to='section-2'>CLICK ERE</Link></FullPageWrap>
+      <FullPageWrap name='section-2'>
         <div className={styles.buttons}>
           {beats.map(beat => (
             <Button
@@ -63,4 +64,4 @@ const Metronome = () => {
   )
 }
 
-export default Metronome
+export default App
