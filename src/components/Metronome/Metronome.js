@@ -3,6 +3,7 @@ import queryString from 'query-string'
 import ReactHowler from 'react-howler'
 import Button from '../Button'
 import TempoSlider from '../TempoSlider'
+import FullPageWrap from '../FullPageWrap'
 import { DEFAULT_TEMPO } from '../../constants'
 import { fetchEntries } from '../../services/contentful'
 import styles from './Metronome.scss'
@@ -43,18 +44,21 @@ const Metronome = () => {
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.buttons}>
-        {beats.map(beat => (
-          <Button
-            key={beat.id}
-            isActive={beat.id === activeBeat.id}
-            text={beat.text}
-            onClick={() => handleBeatButtonClick(beat)}
-          />
-        ))}
-      </div>
-      <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
-      <TempoSlider onChange={onTempoChange} />
+      <FullPageWrap>Section 1</FullPageWrap>
+      <FullPageWrap>
+        <div className={styles.buttons}>
+          {beats.map(beat => (
+            <Button
+              key={beat.id}
+              isActive={beat.id === activeBeat.id}
+              text={beat.text}
+              onClick={() => handleBeatButtonClick(beat)}
+            />
+          ))}
+        </div>
+        <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
+        <TempoSlider onChange={onTempoChange} />
+      </FullPageWrap>
     </div>
   )
 }
