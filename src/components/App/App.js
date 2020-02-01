@@ -48,11 +48,11 @@ const App = () => {
   return (
     <div className={styles.wrap}>
       <Logo />
-      <FullPageWrap name='section-1'>
+      <FullPageWrap name='section-1' isTop>
         <TitleLogo />
         <Link smooth duration={300} to='section-2'>Click to pick a genre</Link>
       </FullPageWrap>
-      <FullPageWrap name='section-2'>
+      <FullPageWrap name='section-2' isBottom>
         <div className={styles.buttons}>
           {beats.map(beat => (
             <Button
