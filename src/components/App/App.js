@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-scroll'
-import Logo from '../../resources/svgs/logo.svg'
 import TitleLogo from '../../resources/svgs/hero-logo.svg'
 import queryString from 'query-string'
 import ReactHowler from 'react-howler'
 import Button from '../Button'
 import TempoSlider from '../TempoSlider'
+import Header from '../Header'
 import FullPageWrap from '../FullPageWrap'
 import { DEFAULT_TEMPO } from '../../constants'
 import { fetchEntries } from '../../services/contentful'
@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <div className={styles.wrap}>
-      <Logo />
+      <Header />
       <FullPageWrap name='section-1' isTop>
         <TitleLogo />
         <Link smooth duration={300} to='section-2'>Click to pick a genre</Link>
