@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-scroll'
 import TitleLogo from '../../resources/svgs/hero-logo.svg'
 import queryString from 'query-string'
 import ReactHowler from 'react-howler'
@@ -49,8 +48,8 @@ const App = () => {
     <div className={styles.wrap}>
       <Header />
       <FullPageWrap name='section-1' isTop>
-        <TitleLogo />
-        <Link smooth duration={300} to='section-2'>Click to pick a genre</Link>
+        <TitleLogo className={styles.titleLogo} />
+        <Button linkTo='section-2' text='F*ck yeah' />
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
         <div className={styles.buttons}>
