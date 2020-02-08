@@ -3,6 +3,7 @@ import TitleLogo from '../../resources/svgs/hero-logo.svg'
 import queryString from 'query-string'
 import ReactHowler from 'react-howler'
 import Button from '../Button'
+import ButtonList from '../ButtonList'
 import TempoSlider from '../TempoSlider'
 import Header from '../Header'
 import FullPageWrap from '../FullPageWrap'
@@ -52,16 +53,7 @@ const App = () => {
         <Button linkTo='section-2' text='F*ck yeah' />
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
-        <div className={styles.buttons}>
-          {beats.map(beat => (
-            <Button
-              key={beat.id}
-              isActive={beat.id === activeBeat.id}
-              text={beat.text}
-              onClick={() => handleBeatButtonClick(beat)}
-            />
-          ))}
-        </div>
+        <ButtonList buttons={beats} activeButtonId={activeBeat.id} onButtonClick={handleBeatButtonClick} />
         <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
         <TempoSlider onChange={onTempoChange} />
       </FullPageWrap>
