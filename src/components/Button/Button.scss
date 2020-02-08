@@ -1,17 +1,13 @@
 .button {
   background-color: $primary-colour;
-  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.33);
-  border-radius: 100px;
   font-size: 36px;
-  letter-spacing: 2px;
-  transition: margin 300ms ease, box-shadow 600ms ease, background-color 800ms ease;
-  padding: 10px 20px;
+  padding: 20px 40px;
   border: none;
   min-height: 70px;
+  // clip: rect(20px 10px 5px 20px);
   
   &.active {
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.33);
-    margin-top: 6px;
   }
   
   &:hover, &.active {
