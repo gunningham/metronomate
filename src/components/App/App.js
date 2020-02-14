@@ -45,6 +45,13 @@ const App = () => {
     setActiveBeat(beat)
   }
 
+  const handleGenreButtonClick = beat => {
+    if (beat.id === activeBeat.id) return setActiveBeat({})
+    setGenre(beat)
+  }
+
+  const genres = [{ name: 'Rock' }, { name: 'Classic' }, { name: 'Indie' }]
+
   return (
     <div className={styles.wrap}>
       <Header />
@@ -53,6 +60,8 @@ const App = () => {
         <Button linkTo='section-2' text='F*ck yeah' />
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
+        <h1>Pick a genre</h1>
+        <ButtonList buttons={genres} activeButtonId={activeBeat.id} onButtonClick={handleGenreButtonClick} />
         <ButtonList buttons={beats} activeButtonId={activeBeat.id} onButtonClick={handleBeatButtonClick} />
         <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
         <TempoSlider onChange={onTempoChange} />
