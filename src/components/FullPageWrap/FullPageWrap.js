@@ -1,11 +1,11 @@
 import React from 'react'
 import { Element } from 'react-scroll'
-import TopBackground from '../../resources/svgs/top-bg.svg'
 import styles from './FullPageWrap.scss'
 
 const FullPageWrap = ({ name, isTop, isBottom, children }) => (
   <Element name={name} className={styles.section}>
-    {isTop && <TopBackground className={styles.top} />}
+    {isTop && <div className={styles.top} />}
+    {isBottom && <div className={styles.bottom} />}
     {children}
   </Element>
 )
