@@ -7,6 +7,7 @@ import TempoSlider from '../TempoSlider'
 import ContentWrap from '../ContentWrap'
 import Header from '../Header'
 import FullPageWrap from '../FullPageWrap'
+import Loader from '../Loader'
 import { DEFAULT_TEMPO } from '../../constants'
 import { fetchEntries } from '../../services/contentful'
 import styles from './App.scss'
@@ -49,6 +50,8 @@ const App = () => {
 
   const genres = [{ text: 'Rock', id: 'rock' }, { text: 'Classic', id: 'classic' }, { text: 'Indie', id: 'indie' }]
 
+  if (!beats.length) return <Loader />
+
   return (
     <div className={styles.wrap}>
       <Header />
@@ -59,11 +62,13 @@ const App = () => {
       <FullPageWrap name='section-2' isBottom>
         <ContentWrap>
           <h1>Pick a genre</h1>
-          {!activeGenre
-            ? <ButtonList buttons={genres} activeButtonId={activeBeat.id} onButtonClick={handleGenreButtonClick} />
-            : <ButtonList buttons={beats} activeButtonId={activeBeat.id} onButtonClick={handleBeatButtonClick} />
+          {activeGenre
+            ? <ButtonList buttons={beats} activeButtonId={activeBeat.id} onButtonClick={handleBeatButtonClick} />
+            : <ButtonList buttons={genres} activeButtonId={activeBeat.id} onButtonClick={handleGenreButtonClick} />
           }
-          <ReactHowler src={activeBeat.url || 'default'} format={['wav']} ref={howlerRef} loop />
+          {activeBeat.url && (
+            <ReactHowler src={activeBeat.url} format={['wav']} ref={howlerRef} loop />
+          )}
           <TempoSlider onChange={onTempoChange} />
         </ContentWrap>
       </FullPageWrap>
