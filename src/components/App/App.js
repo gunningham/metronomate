@@ -1,24 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react'
 import TitleLogo from '../../resources/svgs/hero-logo.svg'
-import ReactHowler from 'react-howler'
 import Button from '../Button'
-import ButtonList from '../ButtonList'
-import TempoSlider from '../TempoSlider'
 import ContentWrap from '../ContentWrap'
 import Header from '../Header'
 import FullPageWrap from '../FullPageWrap'
 import Loader from '../Loader'
+import BeatPicker from '../BeatPicker'
+import GenrePicker from '../GenrePicker'
 import { DEFAULT_TEMPO } from '../../constants'
 import { fetchEntries } from '../../services/contentful'
 import styles from './App.scss'
 
 const App = () => {
   const [activeBeat, setActiveBeat] = useState({})
-  const [activeGenre, setActiveGenre] = useState(null)
+  const [activeGenre, setActiveGenre] = useState({})
   const [beats, setBeats] = useState([])
   const howlerRef = useRef(null)
 
-  const onTempoChange = tempo => {
+  const handleTempoChange = tempo => {
     if (!activeBeat.id) return
     howlerRef.current.howler.rate(tempo / DEFAULT_TEMPO)
   }
@@ -61,15 +60,10 @@ const App = () => {
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
         <ContentWrap>
-          <h1>Pick a genre</h1>
           {activeGenre
-            ? <ButtonList buttons={beats} activeButtonId={activeBeat.id} onButtonClick={handleBeatButtonClick} />
-            : <ButtonList buttons={genres} activeButtonId={activeBeat.id} onButtonClick={handleGenreButtonClick} />
+            ? <BeatPicker beats={beats} activeBeat={activeBeat} onButtonClick={handleBeatButtonClick} howlerRef={howlerRef} onTempoChange={handleTempoChange} />
+            : <GenrePicker genres={genres} activeGenre={activeGenre} onButtonClick={handleGenreButtonClick} />
           }
-          {activeBeat.url && (
-            <ReactHowler src={activeBeat.url} format={['wav']} ref={howlerRef} loop />
-          )}
-          <TempoSlider onChange={onTempoChange} />
         </ContentWrap>
       </FullPageWrap>
     </div>
