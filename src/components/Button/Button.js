@@ -3,13 +3,14 @@ import { Link } from 'react-scroll'
 import styles from './Button.scss'
 
 const Button = ({ text, onClick, isActive, linkTo }) => {
-  const classNames = `${styles.button} ${isActive ? styles.active : ''}`
+  const classNames = `${styles.outer} ${isActive ? styles.active : ''}`
 
   return (
-    <button className={classNames} onClick={onClick}>
-      {!linkTo && text}
-      {linkTo && <Link smooth duration={300} to='section-2'>{text}</Link>}
-    </button>
+    <div className={classNames}>
+      <button className={styles.button} onClick={onClick}>
+        {linkTo ? <Link smooth duration={300} to='section-2'>{text}</Link> : text}
+      </button>
+    </div>
   )
 }
 

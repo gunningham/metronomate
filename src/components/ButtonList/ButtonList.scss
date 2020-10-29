@@ -1,6 +1,5 @@
 .buttons {
   display: flex;
-  height: 10vh;
-  min-height: 60px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }

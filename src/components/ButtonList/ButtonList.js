@@ -4,12 +4,12 @@ import styles from './ButtonList.scss'
 
 const ButtonList = ({ buttons, activeButtonId, onButtonClick }) => (
   <div className={styles.buttons}>
-    {buttons.map(beat => (
+    {buttons.map(button => (
       <Button
-        key={beat.id}
-        isActive={beat.id === activeButtonId}
-        text={beat.text}
-        onClick={() => onButtonClick(beat)}
+        key={button.id}
+        isActive={button.id === activeButtonId}
+        text={button.text}
+        onClick={() => onButtonClick(button)}
       />
     ))}
   </div>
