@@ -60,7 +60,7 @@ const App = () => {
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
         <ContentWrap>
-          {activeGenre
+          {activeGenre.id
             ? <BeatPicker beats={beats} activeBeat={activeBeat} onButtonClick={handleBeatButtonClick} howlerRef={howlerRef} onTempoChange={handleTempoChange} />
             : <GenrePicker genres={genres} activeGenre={activeGenre} onButtonClick={handleGenreButtonClick} />
           }
