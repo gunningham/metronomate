@@ -24,11 +24,11 @@
     content: '';
     height: 26px;
     width: 26px;
-    background: $primary-colour;
+    background: $secondary-colour;
     position: absolute;
     top: 0;
     border-radius: 50%;
-    box-shadow: 0px 4px 0px $secondary-colour;
+    box-shadow: 0px 4px 0px $tertiary-colour;
   }
 
   &::before {
@@ -58,10 +58,13 @@
   }
 
   &::-webkit-slider-thumb{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     background-repeat: no-repeat;
-    background-image: url(https://uploads-ssl.webflow.com/5d114684c693cf4db4a9af8b/5d1dfb60bbf60237755902f2_Asset%2039.svg);
+    // background-image: url(https://uploads-ssl.webflow.com/5d114684c693cf4db4a9af8b/5d1dfb60bbf60237755902f2_Asset%2039.svg);
+    background-color: $secondary-colour;
+    box-shadow: 0px 4px 0px $tertiary-colour;
+    border-radius: 50%;
     cursor: pointer;
     -webkit-appearance: none;
     z-index: 2;
