@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   entry: './src',
@@ -7,6 +8,17 @@ module.exports = {
   },
   devServer: {
     publicPath: '/'
+  },
+  resolve: {
+    alias: {
+      '@atoms': path.resolve(__dirname, 'src/components/atoms/'),
+      '@molecules': path.resolve(__dirname, 'src/components/molecules/'),
+      '@organisms': path.resolve(__dirname, 'src/components/organisms/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@constants': path.resolve(__dirname, 'src/constants/'),
+      '@resources': path.resolve(__dirname, 'src/resources/'),
+      '@services': path.resolve(__dirname, 'src/services/')
+    }
   },
   module: {
     rules: [
