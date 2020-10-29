@@ -5,6 +5,9 @@ module.exports = {
   output: {
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
