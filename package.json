@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack serve --config webpack.config.js --mode development --open --hot",
     "build": "webpack --mode production && node -p 'process.env'"
   },
   "keywords": [],
@@ -18,21 +18,20 @@
     "babel-loader": "^8.0.5",
     "contentful": "^7.9.1",
     "css-loader": "^3.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.1",
-    "query-string": "^6.8.1",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^4.14.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-howler": "^3.7.4",
     "react-scroll": "^1.7.16",
+    "react-svg-loader": "^3.0.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
-    "react-svg-loader": "^3.0.3"
+    "webpack": "^5.3.1",
+    "webpack-cli": "^4.1.0"
   },
   "devDependencies": {
     "standard": "^13.1.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.11.0"
   }
 }
