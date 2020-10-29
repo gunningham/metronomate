@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import TitleLogo from '../../resources/svgs/hero-logo.svg'
-import Button from '../Button'
-import ContentWrap from '../ContentWrap'
-import Header from '../Header'
-import FullPageWrap from '../FullPageWrap'
-import Loader from '../Loader'
-import BeatPicker from '../BeatPicker'
-import GenrePicker from '../GenrePicker'
-import { DEFAULT_TEMPO } from '../../constants'
-import { fetchEntries } from '../../services/contentful'
-import styles from './App.scss'
+import { fetchEntries } from '@services/contentful'
+import { DEFAULT_TEMPO } from '@constants'
+import TitleLogo from '@resources/svgs/hero-logo.svg'
 
-const App = () => {
+import Button from '@atoms/Button'
+import ContentWrap from '@atoms/ContentWrap'
+import FullPageWrap from '@atoms/FullPageWrap'
+import Loader from '@atoms/Loader'
+import Header from '@molecules/Header'
+import BeatPicker from '@organisms/BeatPicker'
+import GenrePicker from '@organisms/GenrePicker'
+
+import styles from './Homepage.scss'
+
+const Homepage = () => {
   const [activeBeat, setActiveBeat] = useState({})
   const [activeGenre, setActiveGenre] = useState({})
   const [beats, setBeats] = useState([])
@@ -70,4 +72,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Homepage

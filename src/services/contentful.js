@@ -1,5 +1,5 @@
 import { createClient } from 'contentful'
-import { REACT_APP_CONTENTFUL_SPACE, REACT_APP_CONTENTFUL_ACCESS_TOKEN } from '../constants'
+import { REACT_APP_CONTENTFUL_SPACE, REACT_APP_CONTENTFUL_ACCESS_TOKEN } from '@constants'
 
 const client = createClient({
   space: REACT_APP_CONTENTFUL_SPACE,

@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonList from '../ButtonList'
-import TempoSlider from '../TempoSlider'
+import ButtonList from '@molecules/ButtonList'
+import TempoSlider from '@molecules/TempoSlider'
 import ReactHowler from 'react-howler'
 // import styles from './BeatPicker.scss'
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DEFAULT_TEMPO, MIN_TEMPO, MAX_TEMPO, STEP_TEMPO, SPACE_KEY_CODE } from '../../constants'
+import { DEFAULT_TEMPO, MIN_TEMPO, MAX_TEMPO, STEP_TEMPO, SPACE_KEY_CODE } from '@constants'
 import styles from './TempoSlider.scss'
 
 const TempoSlider = ({ onChange, defaultTempo }) => {

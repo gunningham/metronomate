@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonList from '../ButtonList'
+import ButtonList from '@molecules/ButtonList'
 
 const GenrePicker = ({ genres, activeGenre, onButtonClick }) => (
   <>

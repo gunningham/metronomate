@@ -1,5 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './components/App'
+import Homepage from '@pages/Homepage'
 
-render(<App />, document.getElementById('metronomate'))
+render(<Homepage />, document.getElementById('metronomate'))
