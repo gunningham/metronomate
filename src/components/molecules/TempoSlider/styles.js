@@ -1,17 +1,18 @@
-.wrap {
+import styled from 'styled-components'
+
+export const Wrap = styled.div`
   padding: 18px;
   text-align: center;
-}
-
-.label {
+`
+export const Label = styled.label`
   margin-bottom: 40px;
   margin-top: 80px;
   display: block;
   font-size: 80px;
   color: $primary-colour;
-}
+`
 
-.slider {
+export const RangeInput = styled.input`
   -webkit-appearance: none;
   width: 80%;
   background: transparent;
@@ -70,4 +71,4 @@
     z-index: 2;
     position: relative;
   }
-}
+`

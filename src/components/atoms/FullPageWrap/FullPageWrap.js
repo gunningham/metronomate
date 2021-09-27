@@ -1,12 +1,13 @@
 import React from 'react'
 import { Element } from 'react-scroll'
-import styles from './FullPageWrap.scss'
+import { BgShape, Section } from './styles'
 
-const FullPageWrap = ({ name, isTop, isBottom, children }) => (
-  <Element name={name} className={styles.section}>
-    {isTop && <div className={styles.top} />}
-    {isBottom && <div className={styles.bottom} />}
-    {children}
+const FullPageWrap = ({ name, showBackground, children }) => (
+  <Element name={name}>
+    <Section>
+      {showBackground && <BgShape />}
+      {children}
+    </Section>
   </Element>
 )
 

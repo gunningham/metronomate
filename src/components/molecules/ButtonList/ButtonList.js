@@ -1,9 +1,9 @@
 import React from 'react'
 import Button from '@atoms/Button'
-import styles from './ButtonList.scss'
+import { Wrap } from './styles'
 
 const ButtonList = ({ buttons, activeButtonId, onButtonClick }) => (
-  <div className={styles.buttons}>
+  <Wrap>
     {buttons.map(button => (
       <Button
         key={button.id}
@@ -12,7 +12,7 @@ const ButtonList = ({ buttons, activeButtonId, onButtonClick }) => (
         onClick={() => onButtonClick(button)}
       />
     ))}
-  </div>
+  </Wrap>
 )
 
 export default ButtonList

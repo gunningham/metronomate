@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-import { Container, Btn } from './Styles'
+import { Container, Btn } from './styles'
 
 const Button = ({ text, onClick, isActive, linkTo }) => (
   <Container isActive>

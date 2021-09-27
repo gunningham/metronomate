@@ -2,7 +2,6 @@ import React from 'react'
 import ButtonList from '@molecules/ButtonList'
 import TempoSlider from '@molecules/TempoSlider'
 import ReactHowler from 'react-howler'
-// import styles from './BeatPicker.scss'
 
 const BeatPicker = ({ beats, activeBeat, onButtonClick, howlerRef, onTempoChange }) => (
   <>

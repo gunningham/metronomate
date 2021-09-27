@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './ContentWrap.scss'
+import { Container } from './styles'
 
 const ContentWrap = ({ children }) => (
-  <div className={styles.wrap}>
+  <Container>
     {children}
-  </div>
+  </Container>
 )
 
 export default ContentWrap

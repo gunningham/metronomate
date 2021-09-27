@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { fetchEntries } from '@services/contentful'
 import { DEFAULT_TEMPO } from '@constants'
-import TitleLogo from '@resources/svgs/hero-logo.svg'
 
 import Button from '@atoms/Button'
 import ContentWrap from '@atoms/ContentWrap'
@@ -11,7 +10,7 @@ import Header from '@molecules/Header'
 import BeatPicker from '@organisms/BeatPicker'
 import GenrePicker from '@organisms/GenrePicker'
 
-import styles from './Homepage.scss'
+import { Wrap, TitleLogo } from './styles'
 
 const Homepage = () => {
   const [activeBeat, setActiveBeat] = useState({})
@@ -54,10 +53,10 @@ const Homepage = () => {
   if (!beats.length) return <Loader />
 
   return (
-    <div className={styles.wrap}>
+    <Wrap>
       <Header />
-      <FullPageWrap name='section-1' isTop>
-        <TitleLogo className={styles.titleLogo} />
+      <FullPageWrap name='section-1' showBackground>
+        <TitleLogo />
         <Button linkTo='section-2' text='Fuck yeah' />
       </FullPageWrap>
       <FullPageWrap name='section-2' isBottom>
@@ -68,7 +67,7 @@ const Homepage = () => {
           }
         </ContentWrap>
       </FullPageWrap>
-    </div>
+    </Wrap>
   )
 }
 

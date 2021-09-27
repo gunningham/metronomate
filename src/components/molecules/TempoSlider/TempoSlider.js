@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { DEFAULT_TEMPO, MIN_TEMPO, MAX_TEMPO, STEP_TEMPO, SPACE_KEY_CODE } from '@constants'
-import styles from './TempoSlider.scss'
+import { Wrap, Label, RangeInput } from './styles'
 
 const TempoSlider = ({ onChange, defaultTempo }) => {
   const [tempo, setTempo] = useState(DEFAULT_TEMPO)
@@ -32,9 +32,9 @@ const TempoSlider = ({ onChange, defaultTempo }) => {
   }, [])
 
   return (
-    <div className={styles.wrap}>
-      <label className={styles.label} htmlFor='tempo'>{tempo} BPM</label>
-      <input
+    <Wrap>
+      <Label htmlFor='tempo'>{tempo} BPM</Label>
+      <RangeInput
         type='range'
         value={tempo}
         onChange={handleRangeInputChange}
@@ -42,9 +42,8 @@ const TempoSlider = ({ onChange, defaultTempo }) => {
         min={MIN_TEMPO}
         max={MAX_TEMPO}
         step={STEP_TEMPO}
-        className={styles.slider}
       />
-    </div>
+    </Wrap>
   )
 }
 

@@ -1,4 +1,6 @@
-.section {
+import styled from 'styled-components'
+
+export const Section = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -8,15 +10,15 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-}
+`
 
-.top {
+export const BgShape = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 84%, 85% 90%, 73% 70%, 20% 40%, 0 18%);
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
   right: 0;
-  background-color: $tertiary-colour;
+  background-color: ${props => props.theme.colours.tertiary};
   z-index: -1;
-}
+`
