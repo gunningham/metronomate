@@ -16,6 +16,10 @@ export const Theme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%;
+  }
+
   body {
     background: ${props => props.theme.colours.secondary};
     font-family: 'Montserrat', sans-serif;
@@ -27,17 +31,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 54pt;
-    letter-spacing: 22.5px;
+    font-size: 5rem;
+    letter-spacing: 2.2rem;
   }
 
   h2 {
-    font-size: 31pt;
-    letter-spacing: 7.8px;
+    font-size: 3rem;
+    letter-spacing: 8rem;
   }
 
   h3 {
-    font-size: 20pt;
-    letter-spacing: 2px;
+    font-size: 2rem;
+    letter-spacing: .2rem;
   }
 `

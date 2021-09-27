@@ -6,5 +6,5 @@ export const Wrap = styled.div`
 `
 
 export const TitleLogo = styled(TitleLogoImage)`
-  margin-bottom: 80px;
+  margin-bottom: 8rem;
 `

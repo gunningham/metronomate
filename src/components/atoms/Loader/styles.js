@@ -8,9 +8,9 @@ export const Spinner = styled.div`
   z-index: 2;
   animation: loader .8s infinite linear;
   transform: translate(-50%);
-  color: $primary-colour;
-  width: 20px;
-  height: 20px;
+  color: ${props => props.theme.colours.primary};
+  width: 2rem;
+  height: 2rem;
 
   @keyframes loader {
     0%,
