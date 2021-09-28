@@ -6,12 +6,18 @@ export const Container = styled.div`
   border: none;
   transition: background-color .1s ease;
   background-color: ${props => props.theme.colours.tertiary};
-
-  &:hover, ${props => props.isActive && css`
+  
+  
+  :hover {
     cursor: pointer;
-    background-color: ${props => props.theme.colours.tertiary};
+    background-color: ${props => props.theme.colours.primary};
+  }
+
+  ${props => props.isActive && css`
+    cursor: pointer;
+    background-color: ${props => props.theme.colours.primary};
   `}
-`
+  `
 
 export const Btn = styled.button`
   font-size: 3rem;
@@ -21,6 +27,8 @@ export const Btn = styled.button`
   text-transform: uppercase;
   letter-spacing: .8rem;
   background: ${props => props.theme.colours.secondary};
+  width: 100%;
+  white-space: nowrap;
 
   &:focus {
     outline: none;
