@@ -1,11 +1,10 @@
 # metronomate
-Simple React app for picking a beat and setting the tempo.
+Metronome app that allows the selection of a drum beat from a specific genre which can have it's tempo modified.
 
-## To do:
-- Read Contentful keys from .env (woops)
-- Styling
-- Consistent SCSS var names
-- General tidy up
-- Look at optimising bundle.js
-- Have a play with styled-components
-- Adjust tempo options so audio quality isn't distorted
+## stack
+ - React
+ - Styled components
+ - React Testing Library
+ - TypeScript
+ - HowlerJs
+ - Webpack
