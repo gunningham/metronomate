@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react'
+import React, { RefObject, FC } from 'react'
 import { ButtonList, TempoSlider } from '@molecules'
 import ReactHowler from 'react-howler'
 import { Heading } from './styles'
@@ -17,8 +17,7 @@ type PropTypes = {
   howlerRef: RefObject<ReactHowler>;
 }
 
-
-const BeatPicker = ({ beats, activeBeatId, onButtonClick, howlerRef, onTempoChange }: PropTypes) => {
+const BeatPicker: FC<PropTypes> = ({ beats, activeBeatId, onButtonClick, howlerRef, onTempoChange }) => {
   const activeBeat = beats.find(beat => beat.id === activeBeatId) || {} as Beat
 
   return (

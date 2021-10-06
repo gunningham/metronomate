@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Button } from '@atoms'
 import { Wrap } from './styles'
 
@@ -13,7 +13,7 @@ type PropTypes = {
   onButtonClick: (id: string) => void
 }
 
-const ButtonList = ({ buttons, activeButtonId, onButtonClick }: PropTypes) => (
+const ButtonList: FC<PropTypes> = ({ buttons, activeButtonId, onButtonClick }) => (
   <Wrap>
     {buttons.map(button => (
       <Button

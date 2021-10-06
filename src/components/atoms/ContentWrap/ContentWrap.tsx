@@ -1,11 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Container } from './styles'
 
-type PropTypes = {
-  children: React.ReactNode;
-}
-
-const ContentWrap = ({ children }: PropTypes) => (
+const ContentWrap: FC = ({ children }) => (
   <Container>
     {children}
   </Container>

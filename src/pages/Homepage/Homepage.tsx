@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, FC } from 'react'
 import ReactHowler from 'react-howler'
 import { fetchEntries } from '@services'
 import { DEFAULT_TEMPO } from '@constants'
@@ -15,21 +15,22 @@ type Beat = {
   text: string;
 }
 
-const Homepage = () => {
+const Homepage: FC = () => {
   const [activeBeatId, setActiveBeatId] = useState<string>('')
   const [activeGenreId, setActiveGenreId] = useState<string>('')
   const [beats, setBeats] = useState<Beat[]>([] as Beat[])
   const howlerRef = useRef<ReactHowler>(null)
 
-  const handleTempoChange = (tempo: number) => {
-    if (!activeBeatId) return
-    howlerRef?.current?.howler.rate(tempo / DEFAULT_TEMPO)
+  const handleTempoChange = (tempo: number): void => {
+    if (activeBeatId) {
+      howlerRef?.current?.howler.rate(tempo / DEFAULT_TEMPO)
+    }
   }
 
-  const getBeats = async () => {
+  const getBeats = async (): Promise<void> => {
     const entries = await fetchEntries('sounds')
 
-    const formattedBeats = entries.map((beat): Beat => ({
+    const formattedBeats = entries.map((beat) => ({
       text: beat.fields.title,
       id: beat.sys.id,
       url: beat.fields.sound.fields.file.url
@@ -38,16 +39,16 @@ const Homepage = () => {
     setBeats(formattedBeats)
   }
 
-  useEffect(() => {
+  useEffect((): void => {
     if (!beats.length) getBeats()
   })
 
-  const handleBeatButtonClick = (id: string) => {
+  const handleBeatButtonClick = (id: string): void => {
     if (id === activeBeatId) setActiveBeatId('')
     else setActiveBeatId(id)
   }
 
-  const handleGenreButtonClick = (id: string) => {
+  const handleGenreButtonClick = (id: string): void => {
     if (id === activeGenreId) setActiveGenreId('')
     else setActiveGenreId(id)
   }

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Spinner } from './styles'
 
-const Loader = () => (
+const Loader: FC = () => (
   <Spinner />
 )
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import LogoPath from '@resources/svgs/logo.svg'
 import InstaIcon from '@resources/svgs/instagra-icon.svg'
 import { HeaderEl } from './styles'
 
-const Header = () => (
+const Header: FC = () => (
   <HeaderEl>
     <img src={LogoPath} alt='Metronomate' />
     <img src={InstaIcon} alt='Instagram' />

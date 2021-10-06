@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'react-scroll'
 
 import { Container, Btn } from './styles'
@@ -10,9 +10,7 @@ type PropTypes = {
   onClick?: () => void;
 };
 
-const Button = ({
-  text, onClick, isActive, linkTo,
-}: PropTypes) => (
+const Button: FC<PropTypes> = ({ text, onClick, isActive, linkTo }) => (
   <Container isActive={isActive}>
     <Btn onClick={onClick}>
       {linkTo ? <Link smooth duration={300} to="section-2">{text}</Link> : text}
